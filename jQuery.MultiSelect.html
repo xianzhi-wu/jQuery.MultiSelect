@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="multiSelect.css"/>
+</head>
+<body>
+<input id="test" style="display:block;height: 32px; width: 300px;"/>
+<script src="jquery.min.js"></script>
+<script src="jquery.multiSelect.js"></script>
+<script>
+    var data = [
+        {userName : "Tom", userId: "1", department: "IT"},
+        {userName : "Ma", userId: "2", department: "IT"},
+        {userName : "Jun", userId: "3", department: "IT"}
+    ];
+    var options = {
+		data : data,
+		text : "userName",
+		val : "userId",
+		desc : "department",
+		onChange : function(){
+		},
+        callback : function(){	     
+        }
+	};
+    $("#test").multiSelect(options);
+</script>
+</body>
+</html>

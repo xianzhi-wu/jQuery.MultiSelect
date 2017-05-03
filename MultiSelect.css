@@ -1,0 +1,159 @@
+@charset"utf-8";
+
+/*
+ * author       : wuxianzhi
+ * date         : 2016-12-1
+ * description  : 多选插件
+ */
+ html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, small, strong, i, dl, dt, dd, ol, ul, li, form, label, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, footer, header, nav, section, audio, video, a, input, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+.hide {
+    display: none;
+}
+
+.select-wrapper {
+	position: relative;
+	border: 1px solid #b2b2b2;
+	cursor: pointer;
+    background: #fff;
+}
+.select-wrapper .checks-select { 
+	position:absolute; 
+	z-index: 9999;
+	left: 0; 
+	right: 0;
+	cursor: pointer;
+	font-size: 14px;
+    background-color: #fff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0px 2px 10px #ACACAC;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+}
+.select-wrapper .checks-select ul {
+    max-height: 256px;
+    overflow: auto;
+}
+.select-wrapper .checks-select.active {
+	opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+.select-wrapper .checks-select #search-wrapper {
+    margin: 0 4px;
+}
+.select-wrapper .checks-select #select-search {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #e3e3e6;
+}
+.select-wrapper .selected-items-wrap {
+	overflow: hidden;
+}
+.select-wrapper .selected-item {
+	float: left;
+    display: block;
+	height: 24px;
+	line-height: 24px;
+	margin: 3px 5px;
+	background: #f8f8f8;
+	font-size: 14px;
+	color: #222;
+	padding-left: 4px;
+}
+.select-wrapper .selected-item .icon-close {
+    display: inline-block;
+	position: relative;
+    height: 12px;
+    width: 12px;
+}
+.select-wrapper .selected-item .icon-close:before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    height: 8px;
+    border-left: 1px solid #666;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.select-wrapper .selected-item .icon-close:after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    height: 8px;
+    border-left: 1px solid #666;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.select-wrapper .checks-select input[type="checkbox"] {
+	display: none;
+}
+.select-wrapper .checks-select .search-no-result {
+    padding: 0 16px;
+}
+.select-wrapper .checks-select .checkbox-li {
+	position: relative;
+	overflow: hidden;
+	height: 32px;
+	line-height: 32px;
+    background: #fff;
+	color: #000;
+}
+.select-wrapper .checks-select .checkbox-li .label-area {
+    padding: 0 16px;
+}
+.select-wrapper .checks-select .checkbox-li:hover, .checks-select .checkbox-li.active {
+	background: #f7f7f7;
+}
+.select-wrapper .checkbox-li.active:after {
+	content: '';
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    border-left: 3px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-color: #999;
+    width: 13px;
+    height: 8px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.select-wrapper .checkbox-li-left, .select-wrapper .checkbox-li-right {
+	float: left;
+	width: 50%;
+    height: 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
